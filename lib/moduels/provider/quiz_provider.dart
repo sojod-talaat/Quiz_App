@@ -1,19 +1,19 @@
 import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
+
 import 'package:quiz_app/core/utils/datebase_helper.dart';
 import 'package:quiz_app/core/utils/quiz_model.dart';
 import 'package:quiz_app/core/utils/service_locator.dart';
 import 'package:quiz_app/moduels/quiz_result/fail_result.dart';
-import 'package:quiz_app/moduels/quiz_result/scuess_result.dart';
-import 'package:quiz_app/moduels/quiz_result/scuses5_result.dart';
 
 import '../../core/utils/app_router.dart';
 
 class QuizProvider extends ChangeNotifier {
   QuizProvider() {
     selectQuizQuestions();
+    focusNode = FocusNode();
+    focusNode.addListener(_onFocusChange);
   }
   TextEditingController quizquestion = TextEditingController();
   TextEditingController quizoptionA = TextEditingController();
@@ -26,6 +26,13 @@ class QuizProvider extends ChangeNotifier {
     quizoptionB.clear();
     quizoptionC.clear();
     quizoptionD.clear();
+  }
+
+  late FocusNode focusNode;
+  bool isFocused = false;
+  void _onFocusChange() {
+    isFocused = focusNode.hasFocus;
+    notifyListeners();
   }
 
   DbHelper dbHelper = gett.get<DbHelper>();
