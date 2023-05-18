@@ -179,5 +179,3 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
     );
   }
 }
-
-// ignore: must_be_immutable

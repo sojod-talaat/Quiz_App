@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.pushNamed(context, AppRouter.quizquestion);
+              Navigator.pushNamed(context, AppRouter.startquiz);
             },
             leading: const Icon(Icons.quiz),
             title: const Text('Start Quiz'),
