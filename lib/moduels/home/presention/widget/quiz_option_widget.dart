@@ -9,10 +9,9 @@ class QuizOptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.symmetric(vertical: 5),
       width: double.infinity,
-      height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: AppColors.tealColor, width: 1.5),

@@ -1,22 +1,15 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:provider/provider.dart';
-import 'package:quiz_app/core/utils/app_router.dart';
+
 import 'package:quiz_app/core/utils/colors.dart';
 import 'package:quiz_app/core/widgets/appbar.dart';
-import 'package:quiz_app/core/widgets/button.dart';
-import 'package:quiz_app/moduels/home/presention/view/home_page.dart';
-import 'package:quiz_app/moduels/provider/quiz_provider.dart';
-import 'package:quiz_app/moduels/quiz_create/quiz_quetions/quiz_questions.dart';
 
-import '../../../quiz_result/fail_result.dart';
-import '../../../quiz_result/scuess_result.dart';
-import '../../../quiz_result/scuses5_result.dart';
+import 'package:quiz_app/moduels/provider/quiz_provider.dart';
 import '../widget/quiz_option_widget.dart';
 
+// ignore: must_be_immutable
 class StartQuizPage extends StatelessWidget {
   StartQuizPage({Key? key}) : super(key: key);
   PageController pageController = PageController();
@@ -41,27 +34,35 @@ class StartQuizPage extends StatelessWidget {
                   RichText(
                       text: TextSpan(children: [
                     TextSpan(
-                      text: 'Question ${value.quizQuestion[index].id}',
+                      text: 'Question ${index + 1}  ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: AppColors.tealColor,
                           fontSize: 25),
                     ),
                     TextSpan(
-                      text: '/${value.quizQuestion.length}',
-                      style: TextStyle(color: AppColors.grey, fontSize: 16),
+                      text: '/ ${value.quizQuestion.length}',
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontSize: 18,
+                      ),
                     ),
                   ])),
                   const SizedBox(
                     height: 30,
                   ),
-                  CustomButton(
-                      width: double.infinity,
-                      height: 50,
-                      text: value.quizQuestion[index].question,
-                      borderRadius: 10,
-                      isCenter: false,
-                      function: () {}),
+                  Container(
+                    padding: const EdgeInsets.all(13),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: AppColors.tealColor,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Text(
+                      value.quizQuestion[index].question!,
+                      style: const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),

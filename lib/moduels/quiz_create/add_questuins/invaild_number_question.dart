@@ -49,7 +49,7 @@ class InvaildNumberOfQuestion extends StatelessWidget {
                     borderRadius: 10,
                     isCenter: true,
                     width: 230,
-                    height: 50,
+                    height: 44,
                     text: 'Back to home',
                     function: () {
                       Navigator.pushNamed(context, AppRouter.initial);

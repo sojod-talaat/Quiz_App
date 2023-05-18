@@ -40,12 +40,13 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
                     height: 10,
                   ),
                   CustomTextField(
+                    focusNode: value.focusNode,
                     controller: value.quizquestion,
                     label: 'Question',
                     hint: 'Enter the question',
                     prefixicon: Icon(
                       Icons.question_mark,
-                      color: AppColors.grey,
+                      color: value.isFocused ? Colors.teal : Colors.grey,
                     ),
                   ),
                   OptionsWidget(
@@ -78,7 +79,8 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
                   Row(children: [
                     Text(
                       'Select the correct Answer',
-                      style: Styles.text16black,
+                      style: Styles.text16black
+                          .copyWith(fontWeight: FontWeight.w400, fontSize: 17),
                     ),
                     const Spacer(),
                     SizedBox(
@@ -145,8 +147,8 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
                   ),
                   CustomButton(
                       width: double.infinity,
-                      height: 50,
-                      borderRadius: 10,
+                      height: 45,
+                      borderRadius: 8,
                       text: 'Add question',
                       isCenter: true,
                       function: () async {

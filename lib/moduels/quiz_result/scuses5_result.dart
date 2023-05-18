@@ -9,6 +9,7 @@ class SucsessResult5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
         child: CustomAppBar(title: 'Quiz App'),
@@ -19,6 +20,7 @@ class SucsessResult5Page extends StatelessWidget {
           bodytext: 'Keep up the good work!',
           title: 'Congratulations!',
           imageassets: AppAssets.sucsessimage,
+          width: 240,
         ),
       ),
     );

@@ -40,7 +40,7 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                       borderRadius: 14,
                       isCenter: true,
                       width: double.infinity,
-                      height: 45,
+                      height: 40,
                       text: '+  Add New Question',
                       function: () {
                         Navigator.pushNamed(context, AppRouter.addnewquestion);
@@ -54,7 +54,6 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                         itemCount: value.quizQuestion.length,
                         itemBuilder: (context, index) => Container(
                           width: double.infinity,
-                          height: 350,
                           padding: const EdgeInsets.all(18),
                           margin: const EdgeInsets.symmetric(vertical: 8),
                           decoration: BoxDecoration(
@@ -64,14 +63,15 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    value.quizQuestion[index].question ??
-                                        ' What is Flutter',
-                                    style: Styles.text16black.copyWith(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w300),
+                                  Expanded(
+                                    child: Text(
+                                      value.quizQuestion[index].question ??
+                                          ' What is Flutter',
+                                      style: Styles.text16black.copyWith(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w300),
+                                    ),
                                   ),
-                                  const Spacer(),
                                   IconButton(
                                     onPressed: () {
                                       showDialog(
@@ -83,7 +83,7 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                                                       borderRadius:
                                                           BorderRadius.all(
                                                               Radius.circular(
-                                                                  1))),
+                                                                  8))),
                                               actionsPadding:
                                                   const EdgeInsets.all(0),
                                               title: const Text(
@@ -100,8 +100,11 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                                                     onPressed: () {
                                                       Navigator.pop(context);
                                                     },
-                                                    child: const Text(
+                                                    child: Text(
                                                       'Cancel',
+                                                      style: TextStyle(
+                                                          color: AppColors
+                                                              .tealColor),
                                                     )),
                                                 TextButton(
                                                   onPressed: () async {
@@ -124,8 +127,11 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                                                     // ignore: use_build_context_synchronously
                                                     Navigator.pop(context);
                                                   },
-                                                  child: const Text(
+                                                  child: Text(
                                                     'Delete',
+                                                    style: TextStyle(
+                                                        color: AppColors
+                                                            .tealColor),
                                                   ),
                                                 ),
                                               ],
@@ -139,6 +145,9 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                                     ),
                                   ),
                                 ],
+                              ),
+                              const SizedBox(
+                                height: 10,
                               ),
                               QuizQustionsOptions(
                                 option: value.quizQuestion[index].options![0],

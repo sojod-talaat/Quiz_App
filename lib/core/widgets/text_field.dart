@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quiz_app/core/utils/colors.dart';
+import 'package:quiz_app/moduels/provider/quiz_provider.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
@@ -8,12 +10,14 @@ class CustomTextField extends StatelessWidget {
   String? hint;
   Icon? prefixicon;
   TextEditingController? controller;
+  FocusNode? focusNode;
 
   CustomTextField(
       {super.key,
       required this.label,
       this.hint,
       this.prefixicon,
+      this.focusNode,
       required this.controller});
 
   @override
@@ -21,6 +25,7 @@ class CustomTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
+        focusNode: focusNode,
         minLines: 1,
         maxLines: 3,
         controller: controller,
@@ -32,10 +37,10 @@ class CustomTextField extends StatelessWidget {
             ),
             prefixIcon: prefixicon,
             focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: AppColors.tealColor)),
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: AppColors.tealColor, width: 2.5)),
             enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: AppColors.grey))),
       ),
     );

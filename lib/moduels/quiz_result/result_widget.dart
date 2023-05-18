@@ -12,8 +12,8 @@ class ResultWidget extends StatelessWidget {
   int score;
   String bodytext;
   String imageassets;
-  double width;
-  double height;
+  double? width;
+  double? height;
 
   ResultWidget(
       {super.key,
@@ -21,8 +21,8 @@ class ResultWidget extends StatelessWidget {
       required this.bodytext,
       required this.title,
       required this.imageassets,
-      this.height = 200,
-      this.width = 200});
+      this.height,
+      this.width});
 
   @override
   Widget build(BuildContext context) {

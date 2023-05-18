@@ -20,6 +20,7 @@ class SucsessResultPage extends StatelessWidget {
           bodytext: 'You\'re a SuperStar!',
           title: 'Congratulations!',
           imageassets: AppAssets.sucsessimage,
+          width: 240,
         ),
       ),
     );

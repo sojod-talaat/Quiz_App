@@ -26,8 +26,12 @@ class CustomButton extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius ?? 20)),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+            blurRadius: .09,
+            color: AppColors.tealColor,
+            offset: const Offset(2, 0))
+      ], borderRadius: BorderRadius.circular(borderRadius ?? 20)),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: MaterialButton(
         color: backColor,

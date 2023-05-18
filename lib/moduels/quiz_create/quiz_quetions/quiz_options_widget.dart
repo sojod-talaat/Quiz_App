@@ -14,16 +14,13 @@ class QuizQustionsOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(9),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(10),
-      ),
       width: double.infinity,
-      height: 50,
+      padding: const EdgeInsets.only(top: 10, left: 10, right: 100, bottom: 19),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(10), color: color),
       child: Text(
         option,
-        style: TextStyle(color: textcolor),
+        style: TextStyle(color: textcolor, fontSize: 13),
       ),
     );
   }

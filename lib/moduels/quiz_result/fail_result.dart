@@ -19,6 +19,7 @@ class FailResultPage extends StatelessWidget {
           bodytext: 'Sorry, better lunck next time!',
           title: 'Oops!',
           imageassets: AppAssets.failimage,
+          width: 200,
         ),
       ),
     );
