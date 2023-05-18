@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quiz_app/core/utils/app_router.dart';
 import 'package:quiz_app/core/utils/colors.dart';
-import 'package:quiz_app/core/utils/quiz_model.dart';
 import 'package:quiz_app/core/utils/styles.dart';
 import 'package:quiz_app/core/widgets/appbar.dart';
 import 'package:quiz_app/core/widgets/button.dart';
