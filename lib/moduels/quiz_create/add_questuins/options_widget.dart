@@ -32,6 +32,12 @@ class OptionsWidget extends StatelessWidget {
           child: CustomTextField(
             controller: textEditingController,
             label: texteieldtitle,
+            vaildetor: (p0) {
+              if (p0!.isEmpty) {
+                return 'Answer Field is Required';
+              }
+              return null;
+            },
           ),
         )
       ],

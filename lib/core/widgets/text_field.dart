@@ -11,6 +11,7 @@ class CustomTextField extends StatelessWidget {
   Icon? prefixicon;
   TextEditingController? controller;
   FocusNode? focusNode;
+  String? Function(String?)? vaildetor;
 
   CustomTextField(
       {super.key,
@@ -18,13 +19,15 @@ class CustomTextField extends StatelessWidget {
       this.hint,
       this.prefixicon,
       this.focusNode,
+      required this.vaildetor,
       required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: TextField(
+      child: TextFormField(
+        validator: vaildetor,
         focusNode: focusNode,
         minLines: 1,
         maxLines: 3,
@@ -36,6 +39,9 @@ class CustomTextField extends StatelessWidget {
               style: TextStyle(color: AppColors.grey),
             ),
             prefixIcon: prefixicon,
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: AppColors.tealColor, width: 2.5)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: AppColors.tealColor, width: 2.5)),

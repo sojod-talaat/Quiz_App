@@ -38,7 +38,7 @@ class QuizProvider extends ChangeNotifier {
   DbHelper dbHelper = gett.get<DbHelper>();
 
   List<QuizModel> quizQuestion = [];
-
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
   String dropdownvalue2 = 'A';
   String dropdownvalue = 'A';
   int score = 0;
